@@ -22,6 +22,7 @@ import android.graphics.Canvas;
 import android.os.Build.VERSION;
 import android.os.Build.VERSION_CODES;
 import android.util.AttributeSet;
+import android.view.GestureDetector;
 import android.view.Gravity;
 import android.view.MotionEvent;
 import android.view.View;
@@ -274,11 +275,12 @@ public class PullToRefreshListView extends PullToRefreshAdapterViewBase<ListView
 		}
 	}
 
-	protected class InternalListView extends ListView implements EmptyViewMethodAccessor {
+	public class InternalListView extends ListView implements EmptyViewMethodAccessor {
 
 		private boolean mAddedLvFooter = false;
+        private GestureDetector gestureDetector;
 
-		public InternalListView(Context context, AttributeSet attrs) {
+        public InternalListView(Context context, AttributeSet attrs) {
 			super(context, attrs);
 		}
 
@@ -311,7 +313,16 @@ public class PullToRefreshListView extends PullToRefreshAdapterViewBase<ListView
 			}
 		}
 
-		@Override
+        @Override
+        public boolean onInterceptTouchEvent(MotionEvent ev) {
+            if (gestureDetector != null) {
+                return super.onInterceptTouchEvent(ev) && gestureDetector.onTouchEvent(ev);
+            } else {
+                return super.onInterceptTouchEvent(ev);
+            }
+        }
+
+        @Override
 		public void setAdapter(ListAdapter adapter) {
 			// Add the Footer View at the last possible moment
 			if (null != mLvFooterLoadingFrame && !mAddedLvFooter) {
@@ -332,6 +343,9 @@ public class PullToRefreshListView extends PullToRefreshAdapterViewBase<ListView
 			super.setEmptyView(emptyView);
 		}
 
+        public void setGestureDetector(GestureDetector gestureDetector) {
+            this.gestureDetector = gestureDetector;
+        }
 	}
 
 }
