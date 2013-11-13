@@ -15,9 +15,6 @@
  *******************************************************************************/
 package com.handmark.pulltorefresh.samples;
 
-import java.util.Arrays;
-import java.util.LinkedList;
-
 import android.app.Activity;
 import android.os.AsyncTask;
 import android.os.Bundle;
@@ -33,6 +30,9 @@ import com.handmark.pulltorefresh.library.PullToRefreshBase;
 import com.handmark.pulltorefresh.library.PullToRefreshBase.Mode;
 import com.handmark.pulltorefresh.library.PullToRefreshBase.OnRefreshListener2;
 import com.handmark.pulltorefresh.library.PullToRefreshGridView;
+
+import java.util.Arrays;
+import java.util.LinkedList;
 
 public final class PullToRefreshGridActivity extends Activity {
 

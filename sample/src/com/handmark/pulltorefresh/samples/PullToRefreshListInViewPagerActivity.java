@@ -1,7 +1,5 @@
 package com.handmark.pulltorefresh.samples;
 
-import java.util.Arrays;
-
 import android.app.Activity;
 import android.content.Context;
 import android.os.AsyncTask;
@@ -19,6 +17,8 @@ import android.widget.ListView;
 import com.handmark.pulltorefresh.library.PullToRefreshBase;
 import com.handmark.pulltorefresh.library.PullToRefreshBase.OnRefreshListener;
 import com.handmark.pulltorefresh.library.PullToRefreshListView;
+
+import java.util.Arrays;
 
 public class PullToRefreshListInViewPagerActivity extends Activity implements OnRefreshListener<ListView> {
 

@@ -15,9 +15,6 @@
  *******************************************************************************/
 package com.handmark.pulltorefresh.samples;
 
-import java.util.Arrays;
-import java.util.LinkedList;
-
 import android.app.ListActivity;
 import android.os.AsyncTask;
 import android.os.Bundle;
@@ -39,6 +36,9 @@ import com.handmark.pulltorefresh.library.PullToRefreshBase.OnRefreshListener;
 import com.handmark.pulltorefresh.library.PullToRefreshBase.State;
 import com.handmark.pulltorefresh.library.PullToRefreshListView;
 import com.handmark.pulltorefresh.library.extras.SoundPullEventListener;
+
+import java.util.Arrays;
+import java.util.LinkedList;
 
 public final class PullToRefreshListActivity extends ListActivity {
 
