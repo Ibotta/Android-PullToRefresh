@@ -37,4 +37,12 @@ android {
 
         instrumentTest.setRoot('tests')
     }
+
+    lintOptions {
+        quiet true
+        abortOnError false
+        ignoreWarnings true
+        checkAllWarnings false
+        warningsAsErrors false
+    }
 }
